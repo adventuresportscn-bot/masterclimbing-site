@@ -1,0 +1,4 @@
+import { ActivityCard, PageHero, PageShell, SectionHead } from "../components";
+import { activities } from "../data";
+
+export default function TravelPage(){const trips=activities.filter(a=>a.type.includes("旅攀"));return <PageShell><PageHero kicker="TRAVEL CLIMB · 旅攀" title="少赶路，多留在岩壁上" body="国内与海外的小团旅攀，把路线、在地生活和真实攀爬能力放进同一段旅程。" image="/media/italy.webp"/><section className="section"><SectionHead eyebrow="目的地精选" title="围绕攀爬本身组织旅程" body="意大利、西班牙、广西、格凸与六盘水等目的地持续整理中；仅显示已完成基本核验的首批活动。"/><div className="activity-grid">{trips.map(a=><ActivityCard key={a.slug} activity={a}/>)}</div></section><section className="section intro-section"><div className="intro-big">不是跟团打卡，<br/>也不是放任自流。</div><div className="intro-small"><p>我们根据队伍能力、天气与岩场条件调整每日计划，保留休息、撤退和换场的空间。</p><p>海外活动涉及签证、机票、保险与能力评估；未核验的价格和条款不会在官网承诺。</p></div></section></PageShell>}
